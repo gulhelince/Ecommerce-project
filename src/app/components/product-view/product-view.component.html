@@ -1,15 +1,3 @@
-<!--header part-->
-<!-- <div class="container-fluid" style="background-color: black;">
-    <div class="row justify-content-center text-center">
-        <div class="col-md-8 col-lg-6">
-            <div class="header">
-                <h3 style="color: white;font-size: 23px;">Popular E-commerce Products</h3>
-            </div>
-        </div>
-    </div>
-</div> -->
-
-
 <!--product display part-->
 <div class="container-fluid" style="background-color: black;">
     <div class="row">
@@ -27,6 +15,7 @@
                         <a class="text-default">{{item.title}}</a>
                     </h6>
                 </div>
+                
                 <h3 class="mb-0 font-weight-semibold">{{item.price}}</h3>
                 <button routerLink="/product-detail/{{item.id}}" class="btn btn-sm btn-dark mt-2"><i class="fa fa-solid fa-info mr-2">&nbsp;&nbsp;view details</i></button><br>
                 <button (click)="addtocart(item)" class="btn btn-sm btn-warning mt-2"><i class="fa fa-cart-plus mr-2">&nbsp;Add to cart </i></button>&nbsp;<br>

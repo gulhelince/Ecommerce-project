@@ -1,82 +1,126 @@
-<ng-container *ngIf="showproduct.length !=0">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-9">
-
-            
+<ng-container *ngIf="showproduct.length != 0">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-9">
         <h3>Cart Items</h3>
-       <table class="table table-borderless mt-3">
-        <thead class="thead-dark">
+        <table class="table table-borderless mt-3">
+          <thead class="thead-dark">
             <tr>
-                <th scope="col">Image</th>
-                <th scope="col">Brand</th>
-                <th scope="col">Category</th>
-                <th scope="col">Price</th>
-                <th scope="col">Action</th>
+              <th scope="col">Image</th>
+              <th scope="col">Brand</th>
+              <th scope="col">Category</th>
+              <th scope="col">Price</th>
+              <th scope="col">Action</th>
             </tr>
-        </thead>
-        <tbody>
+          </thead>
+          <tbody>
             <tr *ngFor="let item of showproduct">
-                <td><img style="width: 120px;" src="{{item.images[0]}}"></td>
-                <td>{{item.title}}</td>
-                <td>{{item.category}}</td>
-                <td>?{{item.price}}</td>
-                <td><button (click)="deleteitem(item)" class="btn btn-danger">Delete</button></td>
+              <td><img style="width: 120px" src="{{ item.images[0] }}" /></td>
+              <td>{{ item.title }}</td>
+              <td>{{ item.category }}</td>
+              <td>?{{ item.price }}</td>
+              <td>
+                <button (click)="deleteitem(item)" class="btn btn-danger">
+                  Delete
+                </button>
+              </td>
             </tr>
-        </tbody>
-       </table> 
-    </div>
-    <!--total section-->
-    <div class="col-sm-3">
-        <h1>Total Amount:</h1><br>
-        <strong style="font-size: 35px; color: green;">${{totalamount}}</strong><br>
+          </tbody>
+        </table>
+      </div>
+      <!--total section-->
+      <div class="col-sm-3">
+        <h1>Total Amount:</h1>
+        <br />
+        <strong style="font-size: 35px; color: green">${{ totalamount }}</strong
+        ><br />
         <div class="btn-group mt-3">
-            <button (click)="this.addressform=true" class="btn btn-primary">Checkout</button>&nbsp;
-            <button (click)="Empty()" class="btn btn-secondary">Empty cart</button>
+          <button (click)="this.addressform = true" class="btn btn-primary">
+            Checkout</button
+          >&nbsp;
+          <button (click)="Empty()" class="btn btn-secondary">
+            Empty cart
+          </button>
         </div>
         <!--form-->
         <div class="mt-3" *ngIf="addressform">
-        <form [formGroup]="myform">
+          <form [formGroup]="myform">
             <div class="form-group">
-              <label for="exampleInputEmail1" class="form-label">Email address</label>
-              <input type="email" class="form-control" formControlName="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email">
-              
+              <label for="exampleInputEmail1" class="form-label"
+                >Email address</label
+              >
+              <input
+                type="email"
+                class="form-control"
+                formControlName="email"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                placeholder="email"
+              />
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1" class="form-label">Name</label>
-              <input type="text" class="form-control" formControlName="name" id="exampleInputPassword1" placeholder="Name">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="name"
+                id="exampleInputPassword1"
+                placeholder="Name"
+              />
             </div>
 
             <div class="form-group">
-                <label for="exampleInputPassword1" class="form-label">Mobile Number</label>
-                <input type="number" class="form-control" formControlName="mobile" id="exampleInputPassword1" placeholder="Mobile">
-              </div>
+              <label for="exampleInputPassword1" class="form-label"
+                >Mobile Number</label
+              >
+              <input
+                type="number"
+                class="form-control"
+                formControlName="mobile"
+                id="exampleInputPassword1"
+                placeholder="Mobile"
+              />
+            </div>
 
-              <div class="form-group">
-                <label for="exampleFormControlTextarea1">Address</label>
-                <textarea class="form-control" formControlName="address" id="exampleFormControlTextarea1" rows="3" placeholder="Address"></textarea>
-              </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Address</label>
+              <textarea
+                class="form-control"
+                formControlName="address"
+                id="exampleFormControlTextarea1"
+                rows="3"
+                placeholder="Address"
+              ></textarea>
+            </div>
 
-
-            <button routerLink="/order-page" type="submit" (click)="onsubmit()" [disabled]="this.myform.invalid" class="btn btn-success mt-2">Order</button>&nbsp;
-            <button type="submit" (click)="cancel()" class="btn btn-dark mt-2">Cancel</button>&nbsp;
-            
+            <button
+              routerLink="/order-page"
+              type="submit"
+              (click)="onsubmit()"
+              [disabled]="this.myform.invalid"
+              class="btn btn-success mt-2"
+            >
+              Order</button
+            >&nbsp;
+            <button type="submit" (click)="cancel()" class="btn btn-dark mt-2">
+              Cancel</button
+            >&nbsp;
           </form>
+        </div>
+      </div>
+      <!--form ends-->
     </div>
-</div>
-    <!--form ends-->
-</div>
-</div>
+  </div>
 </ng-container>
 
 <!--Empty cart-->
 
 <ng-container *ngIf="showproduct.length == 0">
-    <div class="card">
-        <div class="center">
-            <h4>Your Cart is Empty</h4>
-            <h6>Please Add Item</h6>
-            <button routerLink="" class="btn btn-dark">Shop Now</button>
-        </div>
+  <div class="card">
+    <div class="center">
+      <h4>Your Cart is Empty</h4>
+      <h6>Please Add Item</h6>
+      <button routerLink="" class="btn btn-dark">Shop Now</button>
     </div>
+  </div>
 </ng-container>

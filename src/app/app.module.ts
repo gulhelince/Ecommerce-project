@@ -26,11 +26,8 @@ import { OrderPageComponent } from './components/order-page/order-page.component
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule,Ng2SearchPipeModule,
-   
-
-
-
+    HttpClientModule,
+    Ng2SearchPipeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
