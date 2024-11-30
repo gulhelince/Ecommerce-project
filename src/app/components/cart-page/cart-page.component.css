@@ -282,3 +282,38 @@
 .progress-steps .step.completed::after {
   background-color: #28a745; /* Tamamlanan adım için yeşil alt çizgi */
 }
+
+
+
+
+.thank-you-container {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 50px auto;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.products .product-card {
+  position: relative;
+}
+
+.products .product-image img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.products .product-image .badge {
+  top: -10px;
+  right: -10px;
+  background-color: black;
+  color: white;
+  font-size: 12px;
+  padding: 5px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

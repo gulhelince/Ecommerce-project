@@ -146,18 +146,9 @@ export class CartPageComponent implements OnInit {
         quantity: 1, // Başlangıç miktarını 1 olarak ayarlıyoruz
       }));
       this.updateTotalAmount();
+      
     });
 
-    // Form
-    // this.myform = new FormGroup({
-    //   email: new FormControl('', [Validators.required, Validators.email]),
-    //   name: new FormControl('', Validators.required),
-    //   mobile: new FormControl('', [
-    //     Validators.required,
-    //     Validators.pattern('^[0-9]+$'),
-    //   ]),
-    //   address: new FormControl('', Validators.required),
-    // });
 
     // Form
     this.myform = new FormGroup({
@@ -182,6 +173,8 @@ export class CartPageComponent implements OnInit {
         Validators.required,
         Validators.pattern('^[0-9]{3}$'),
       ]),
+
+       
     });
 
 
@@ -230,14 +223,6 @@ export class CartPageComponent implements OnInit {
     this.myform.reset();
   }
 
-  // Formu gönderme
-  // onsubmit(): void {
-  //   if (this.myform.valid) {
-  //     console.log(this.myform.value);
-  //     this.myform.reset();
-  //     this.currentStep = 3; // Sipariş tamamlandı adımına geç
-  //   }
-  // }
 
   // Miktar artırma
   increaseQuantity(item: any): void {
@@ -286,5 +271,19 @@ export class CartPageComponent implements OnInit {
     this.myform.controls['expirationDate'].updateValueAndValidity();
     this.myform.controls['cvc'].updateValueAndValidity();
   }
+
+    // Sipariş kodu oluşturma
+    generateOrderCode(): string {
+      return Math.random().toString(36).substr(2, 9).toUpperCase();
+    }
+  
+    // Güncel tarihi alma
+    getCurrentDate(): string {
+      return new Date().toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      });
+    }
   
 }
