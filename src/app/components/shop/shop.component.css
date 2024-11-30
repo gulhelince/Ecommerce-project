@@ -51,8 +51,8 @@ button {
     padding: 8px 12px; /* İç boşlukları ayarlar */
     font-size: 14px; /* Yazı boyutu */
     transition: background-color 0.3s ease, transform 0.2s ease; /* Hover ve aktif efektleri için */
-    height: 50px;
-    width: 170px;
+    height: 40px;
+    width: 250px;
     text-align: center;
    
   }

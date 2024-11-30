@@ -6,5 +6,83 @@ img{
 
 .product-detail{
     margin-top: 40px;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
 }
+
+.container{
+    border-radius: 8px;
+}
+
+.product-img{
+    margin-bottom: 15px;
+    max-width: 100%; /* Resmi alanına sığdır */
+    max-height: 300; /* Resmin taşmasını önler */
+    object-fit: contain; /* Resmi bozmadan ölçeklendirir */
+    justify-content: center; /* Yatay ortalama */
+    align-items: center; /* Dikey ortalama */
+    background-color: rgb(245, 248, 248);
+}
+
+.card-img-action {
+    background-color: rgb(249, 249, 249);
+   
+} 
+
+.container{
+    width: 850px;
+}
+
+
+button {
+    display: inline-flex; /* Buton içeriğini hizalar */
+    align-items: center; /* İkon ve yazıyı dikeyde hizalar */
+    gap: 5px; /* İkon ile yazı arasındaki boşluk */
+    border-radius: 4px; /* Köşeleri yuvarlar */
+    padding: 8px 12px; /* İç boşlukları ayarlar */
+    font-size: 14px; /* Yazı boyutu */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Hover ve aktif efektleri için */
+    height: 40px;
+    width: 400px;
+    text-align: center;
+   
+  }
+  
+  button i {
+    margin-right: 5px; /* İkon ile metin arasına boşluk */
+    font-size: 16px; /* İkon boyutu */
+    align-items: center;
+  }
+  
+  button.btn-dark {
+    background-color: #000; /* Koyu arka plan */
+    color: #fff; /* Beyaz yazı */
+    border: none;
+  }
+  
+  button.btn-dark:hover {
+    background-color: #495057; /* Hover sırasında daha açık bir ton #495057; */
+    transform: scale(1.05); /* Hover sırasında büyüme efekti */
+  }
+  
+  button.btn-warning {
+    background-color: #000; /* Sarı arka plan */
+    color: #ffffff; /* Siyah yazı */
+    border: none;
+  }
+  
+  button.btn-warning:hover {
+    background-color: #495057; /* Hover sırasında daha koyu bir sarı */
+    transform: scale(1.05); /* Hover sırasında büyüme efekti */
+  }
+  
+  button + button {
+    margin-left: 10px; /* Butonlar arasına yatay boşluk */
+  }
+
+  .deneme{
+    height: 280px;
+  }
+
+  .deneme1{
+    height: 300px;
+  }

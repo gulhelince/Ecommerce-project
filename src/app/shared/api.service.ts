@@ -64,6 +64,11 @@ removeallitems(){
     this.cartitemlist = [];  // Sepeti temizle
     this.productlist.next(this.cartitemlist)  // Sepeti güncelle
 }
+
+// product details 
+
+
+
 }
 
 /*

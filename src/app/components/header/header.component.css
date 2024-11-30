@@ -1,0 +1,132 @@
+/* .brand
+{
+    font-size: 30px;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+    padding: 0px 30px;
+}
+
+.link
+{
+    text-decoration: none;
+    font-size: 18px;
+    color: #000;
+    padding: 0px 10px;
+    font-size: 400;
+}
+
+.link:hover
+{
+    color: blue;
+}
+
+.cartCount
+{
+    font-size: 16px;
+    color: blue;
+    font-weight: bold;
+}
+
+@media screen and (max-width:600px) {
+    .brand 
+    {
+        padding: 0px 10px;
+    }
+} */
+
+/* Navbar genel ayarları */
+nav {
+    background-color: white;
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Marka (sol kısım) */
+  .brand {
+    font-size: 1.5rem;
+    color: #0a0a0a;
+    text-decoration: none;
+    padding: 30px 30px;
+    
+  }
+  
+  /* Ortadaki Menü Bağlantıları */
+  .link {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #000;
+    transition: color 0.3s;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+  }
+  
+  .link:hover {
+    color: #007bff;
+    text-decoration: underline;
+  }
+
+  .active-link {
+    text-decoration: underline; /* Aktif linkin altını çizer */
+    color: #000000;
+  }
+  
+  /* Sepet Sayacı (sağ kısım) */
+  .cartCount {
+    font-size: 0.9rem;
+    color: red;
+    font-weight: bold;
+  }
+  
+  /* Esnek Hizalama */
+  .d-flex {
+    display: flex;
+  }
+  
+  .justify-content-between {
+    justify-content: space-between;
+  }
+  
+  .justify-content-center {
+    justify-content: center;
+  }
+  
+  .justify-content-end {
+    justify-content: flex-end;
+  }
+  
+  .align-items-center {
+    align-items: center;
+  }
+  
+  /* Responsive Tasarım */
+  @media (max-width: 768px) {
+    .link {
+      font-size: 0.9rem;
+      margin: 0 5px;
+    }
+  }
+  
+  .cart-container {
+    position: relative;
+    display: inline-block; /* İkon ve yazıyı yan yana yerleştirir */
+  }
+  
+  .cartCount {
+    position: absolute;
+    top: -9px; /* Cart yazısının üstünde olacak şekilde yukarıya alıyoruz */
+    right: -15px; /* Sağdan biraz uzaklaştırıyoruz */
+    background-color: rgb(0, 0, 0); /* Sayacın arka planını kırmızı yapıyoruz */
+    color: white; /* Yazıyı beyaz yapıyoruz */
+    border-radius: 40%; /* Sayacı yuvarlak yapıyoruz */
+    padding: 2px 7px; /* Sayacın içine biraz boşluk ekliyoruz */
+    font-size: 12px; /* Sayacın boyutunu küçültüyoruz */
+    font-weight: bold; /* Sayacın yazısını daha belirgin yapıyoruz */
+  }
+  
+.icon{
+  font-size: 1.5rem;
+  padding: 2px;
+  align-items: center;
+}

@@ -1,0 +1,142 @@
+.category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .category-card:hover {
+    transform: scale(1.1);
+  }
+  
+  .category-icon img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 2px solid #cecece;
+    padding: 3px;
+  }
+  
+  .category-name {
+    font-size: 16px;
+    color: #000000;
+  }
+  
+  .shopfrom {
+    font-size: 16px;
+  }
+
+  
+.productBox
+{
+    background-color: #fff;
+    padding: 30px 50px;
+    border-radius: 5px;
+}
+
+.productBox a
+{
+    text-decoration: none;
+    font-size: 14px;
+    color: #000;
+    text-align: center;
+    padding: 10px;
+}
+
+.productBox a:hover
+{
+    font-weight: 400;
+}
+
+.productImg
+{
+    height: 200px;
+    width: 90%;
+}
+
+.productContent img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.productContent h4
+{
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.productLink
+{
+    text-decoration: none;
+    font-size: 14px;
+    color: #000;
+    font-weight: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.card-body button {
+    display: inline-flex; /* Buton içeriğini hizalar */
+    align-items: center; /* İkon ve yazıyı dikeyde hizalar */
+    gap: 5px; /* İkon ile yazı arasındaki boşluk */
+    border-radius: 4px; /* Köşeleri yuvarlar */
+    padding: 8px 12px; /* İç boşlukları ayarlar */
+    font-size: 14px; /* Yazı boyutu */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Hover ve aktif efektleri için */
+    height: 50px;
+    width: 250px;
+    text-align: center;
+   
+  }
+  
+  .card-body button i {
+    margin-right: 5px; /* İkon ile metin arasına boşluk */
+    font-size: 16px; /* İkon boyutu */
+    align-items: center;
+  }
+  
+  .card-body button.btn-dark {
+    background-color: #000; /* Koyu arka plan */
+    color: #fff; /* Beyaz yazı */
+    border: none;
+  }
+  
+  .card-body button.btn-dark:hover {
+    background-color: #495057; /* Hover sırasında daha açık bir ton #495057; */
+    transform: scale(1.05); /* Hover sırasında büyüme efekti */
+  }
+  
+  .card-body button.btn-warning {
+    background-color: #000; /* Sarı arka plan */
+    color: #ffffff; /* Siyah yazı */
+    border: none;
+  }
+  
+  button.btn-warning:hover {
+    background-color: #495057; /* Hover sırasında daha koyu bir sarı */
+    transform: scale(1.05); /* Hover sırasında büyüme efekti */
+  }
+  
+  button + button {
+    margin-left: 10px; /* Butonlar arasına yatay boşluk */
+  }
+
+  .card img {
+    margin-bottom: 15px;
+    max-width: 100%; /* Resmi alanına sığdır */
+    max-height: 150px; /* Resmin taşmasını önler */
+    object-fit: contain; /* Resmi bozmadan ölçeklendirir */
+    /*transition: transform 0.3s ease, box-shadow 0.3s ease; /* Geçiş efekti */
+    cursor: pointer; /* İmleç değişimi */
+}
+.card-img-actions{
+  display: flex; /* Flexbox etkinleştir */
+  justify-content: center; /* Yatay ortalama */
+  align-items: center; /* Dikey ortalama */
+  height: 100%; /* Konteynerin yüksekliğini belirt */
+  width: 100%; /* Konteynerin genişliğini belirt */
+}

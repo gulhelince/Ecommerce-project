@@ -11,6 +11,10 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { HeaderComponent } from './components/header/header.component';
 import { CartPageComponent } from './components/cart-page/cart-page.component';
 import { OrderPageComponent } from './components/order-page/order-page.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { FooterComponent } from './components/footer/footer.component';
+import { HomeComponent } from './components/home/home.component';
+import { ShopComponent } from './components/shop/shop.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +24,9 @@ import { OrderPageComponent } from './components/order-page/order-page.component
     HeaderComponent,
     CartPageComponent,
     OrderPageComponent,
+    FooterComponent,
+    HomeComponent,
+    ShopComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,6 +35,8 @@ import { OrderPageComponent } from './components/order-page/order-page.component
     FormsModule,
     HttpClientModule,
     Ng2SearchPipeModule,
+    MatPaginatorModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

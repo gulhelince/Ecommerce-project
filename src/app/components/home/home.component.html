@@ -1,0 +1,118 @@
+<!-- banner start -->
+
+  <main class="container-fluid ">
+
+    <!-- banner start -->
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+
+        <div class="carousel-inner">
+            <div class="carousel-item active" *ngFor="let data of bannerImages">
+                <img src="{{data.img}}" class="d-block w-100" alt="...">
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+  </main>
+
+    <div class="container mt-5">
+        <!-- Kategori Alanı -->
+        <div class="row my-4 mt-8">
+          <div class="col-md-12">
+            <h4 class="shopfrom ">Shop From <span class="text-primary">Top Categories</span></h4>
+          </div>
+        </div>
+      
+        <div class="row justify-content-center text-center">
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2" *ngFor="let category of categories">
+            <div
+              class="category-card"
+              [class.active]="category === selectedCategory"
+              (click)="filterByCategory(category)"
+            >
+              <div class="category-icon">
+                <img
+                  src="../../assets/images/image 6.png"
+                  class="img-fluid rounded-circle"
+                />
+              </div>
+              <div class="category-name mt-2">
+                <span>{{ category }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+
+<!-- show appliance product  -->
+
+
+ <br><br>
+
+  
+
+
+
+  <!-- <div class="container my-4">
+    <h4 class="font-weight-bold mb-3">Top Categories</h4>
+    <div class="d-flex justify-content-start">
+      <button
+        *ngFor="let category of categories"
+        class="btn btn-outline-primary mx-2"
+        [class.active]="category === selectedCategory"
+        (click)="filterByCategory(category)"
+      >
+        {{ category }}
+      </button>
+    </div>
+  </div> -->
+
+  
+  <div class="container my-5">
+    <div class="d-flex justify-content-between align-items-center">
+        <h4  class="shopfrom">
+          Top Picks in <span class="text-primary">{{ selectedCategory }}</span>
+        </h4>
+        <a
+          routerLink="/product-view"
+          class="btn btn-link text-primary font-weight-bold"
+        >
+          View All >
+        </a>
+      </div>
+    
+    <div class="row">
+      <div class="col-md-3" *ngFor="let product of selectedCategoryProducts">
+        <div class="card">
+          <img
+            [src]="product.thumbnail"
+            [alt]="product.title"
+            class="card-img-top img-fluid"
+          />
+          <div class="card-body text-center">
+            <h6 class="font-weight-bold">{{ product.title }}</h6>
+            <p class="text-muted">${{ product.price }}</p>
+            <button
+              (click)="addtocart(product)"
+              class="home btn btn-sm btn-warning justify-content-center"
+            >
+            <i class="fa fa-cart-plus mr-2"></i>Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+

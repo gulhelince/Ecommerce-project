@@ -1,28 +1,47 @@
 <!--single product display-->
-<div class="container">
-    <div class="row product-detail">
-        <div class="col-sm-3">
-            <img class="product-img" src="{{productdata?.images[0]}}">
-        <div>
-            <button class="btn btn-primary">Buy Now</button> &nbsp;
-            <button (click)="addtocart(productdata)" *ngIf="showadd" class="btn btn-success">Add to Cart</button>&nbsp;
-            <button (click)="removeitem(productdata)" *ngIf="showremove" class="btn btn-info">Remove Item</button>
+<div class="container border border-secondary-subtle mt-5 p-5">
+
+    <div class="d-flex justify-content-start">
+        <!-- <button routerLink="/product-view" class="btn btn-warning text-light justify-content-center">BACK</button> -->
+
+        <a routerLink="/product-view" class="btn btn-link text-primary font-weight-bold">
+          <p>   < Back </p>
+        </a>
+      </div>
+    
+    <div class="row product-detail deneme1">
+        
+        <div class=" col-sm-6 " >
+            <img class="product-img deneme " src="{{productdata?.images[0]}}">
+            
         </div>
+    
+        <!--right side-->
+        <div class="col-sm-6">
+            <div class="">
+                <h1>{{productdata?.title}}</h1>
+                <!-- <p style="color: green;">price</p> -->
+                <h3><strong>${{productdata?.price}}</strong></h3>
+                
+                <!-- <strong>Description : </strong> -->
+                <p>{{productdata?.description}}</p>
+                <!-- <p style="color: green;" >Discount: {{productdata?.discountPercentage}} %</p><br> -->
+
+                Category:&nbsp;{{productdata?.category}}<br>
+                Stocks:{{productdata?.stock}}<br><br>
+                <div class="">
+                    <!-- <button class="btn btn-primary">Buy Now</button> &nbsp; -->
+                    <button (click)="addtocart(productdata)" *ngIf="showadd" class="btn btn-sm btn-warning mt-2 justify-content-center"><i class="fa fa-cart-plus mr-2"></i>Add to Cart</button>&nbsp;
+                    <button (click)="removeitem(productdata)" *ngIf="showremove" class="btn btn-sm btn-warning mt-2 justify-content-center">Remove Item</button>
+                </div>
+    
+            </div>
+        </div>
+
     </div>
 
-    <!--right side-->
-    <div class="col-sm-8">
-        <div>
-            <h1>{{productdata?.title}}</h1>
-            <p style="color: green;">price</p>
-            <h3>{{productdata?.price}}</h3>
-            <strong>Category:&nbsp;{{productdata?.category}}</strong><br>
-            <strong>Description</strong><br>
-            <p>{{productdata?.description}}</p>
-            <p style="color: green;" >Discount: {{productdata?.discountPercentage}} %</p><br>
-            <strong>Stocks:{{productdata?.stock}}</strong><br>
-            <button routerLink="/" class="btn btn-warning text-light mt-2">BACK</button>
-        </div>
-    </div>
-</div>
+    
+      
+    
+    
 </div>

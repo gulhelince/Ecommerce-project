@@ -1,144 +1,40 @@
-// import { Component, OnInit } from '@angular/core';
-// import { ApiService } from 'src/app/shared/api.service';
-// import { product } from './productmodal';
-// import {PageEvent, MatPaginatorModule} from '@angular/material/paginator';
-
-
-// @Component({
-//   selector: 'app-product-view',
-//   templateUrl: './product-view.component.html',
-//   styleUrls: ['./product-view.component.css'],
-  
-  
-// })
-// export class ProductViewComponent implements OnInit {
-
-  
-  
-//   data:any|product[]
-//   constructor(private api:ApiService) { }
-
-//   ngOnInit(): void {
-//     this.displayproducts();
-//   }
-
-//   displayproducts(){
-//     this.api.getProduct().subscribe(res=>{
-//       this.data = res;
-//       console.log(res);
-//     })
-//   }
-
-//   addtocart(item:product){
-//     this.api.addtocart(item);
-//   }
-
-//   removeitem(item:product){
-//     this.api.removecartitem(item);
-//   }
-
-  
-
-// }
-
 
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ApiService } from 'src/app/shared/api.service';
 import { product } from './productmodal';
 
 @Component({
-  selector: 'app-product-view',
-  templateUrl: './product-view.component.html',
-  styleUrls: ['./product-view.component.css'],
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class ProductViewComponent implements OnInit {
+export class HomeComponent implements OnInit {
+
   
-  // data: any | product[] = [];
-  // pagedProducts: product[] = [];
-  // pageSize = 12; // Varsayılan sayfa boyutu
-  // currentPage = 0;
 
-  // constructor(private api: ApiService) {}
+  bannerImages = [
+    {
+      id:1,
+      img:'../../assets/images/img1.jpg',
+    },
+    {
+      id:2,
+      img:'../../assets/images/img2.jpg',
+    },
+    {
+      id:3,
+      img:'../../assets/images/img3.jpg',
+    }
+  ]
 
-  // ngOnInit(): void {
-  //   this.displayproducts();
-  // }
-
-  // displayproducts(): void {
-  //   this.api.getProduct().subscribe((res) => {
-  //     this.data = res;
-  //     this.updatePagedProducts();
-  //   });
-  // }
-
-  // updatePagedProducts(): void {
-  //   const startIndex = this.currentPage * this.pageSize;
-  //   const endIndex = startIndex + this.pageSize;
-  //   this.pagedProducts = this.data?.products.slice(startIndex, endIndex);
-  // }
-
-  // onPageChange(event: PageEvent): void {
-  //   this.pageSize = event.pageSize;
-  //   this.currentPage = event.pageIndex;
-  //   this.updatePagedProducts();
-  // }
-
-  // addtocart(item: product): void {
-  //   this.api.addtocart(item);
-  // }
-
-  // removeitem(item: product): void {
-  //   this.api.removecartitem(item);
-  // }
-
-  // data: any | product[] = [];
-  // pagedProducts: product[] = [];
-  // pageSize = 12; // Varsayılan sayfa boyutu
-  // currentPage = 0;
-  // cartItems: product[] = []; // Sepetteki ürünleri tutmak için
-
-  // constructor(private api: ApiService) {}
-
-  // ngOnInit(): void {
-  //   this.displayproducts();
-  // }
-
-  // displayproducts(): void {
-  //   this.api.getProduct().subscribe((res) => {
-  //     this.data = res;
-  //     this.updatePagedProducts();
-  //   });
-  // }
-
-  // updatePagedProducts(): void {
-  //   const startIndex = this.currentPage * this.pageSize;
-  //   const endIndex = startIndex + this.pageSize;
-  //   this.pagedProducts = this.data?.products.slice(startIndex, endIndex);
-  // }
-
-  // onPageChange(event: PageEvent): void {
-  //   this.pageSize = event.pageSize;
-  //   this.currentPage = event.pageIndex;
-  //   this.updatePagedProducts();
-  // }
-
-  // addtocart(item: product): void {
-  //   const isInCart = this.cartItems.some((cartItem) => cartItem.id === item.id);
-
-  //   if (!isInCart) {
-  //     this.api.addtocart(item);
-  //     this.cartItems.push(item); // Ürünü sepete ekle
-  //     console.log(`${item.title} sepete eklendi.`);
-  //   } else {
-  //     console.log(`${item.title} zaten sepette mevcut.`);
-  //   }
-  // }
-
-  // removeitem(item: product): void {
-  //   this.api.removecartitem(item);
-  //   this.cartItems = this.cartItems.filter((cartItem) => cartItem.id !== item.id); // Sepetten çıkar
-  //   console.log(`${item.title} sepetten kaldırıldı.`);
-  // }
+  topCategories = [
+    { name: 'Mobile', image: '../../assets/images/img3.jpg' },
+    { name: 'Cosmetics', image: '../../assets/images/img3.jpg' },
+    { name: 'Electronics', image: '../../assets/images/img3.jpg' },
+    { name: 'Furniture', image: '../../assets/images/img3.jpg' },
+    { name: 'Watches', image: '../../assets/images/img3.jpg' },
+    { name: 'Decor', image: '../../assets/images/img3.jpg' }
+  ];
 
   data: product[] = []; // Tüm ürünler
   pagedProducts: product[] = []; // Sayfalama yapılan ürünler
@@ -152,18 +48,31 @@ export class ProductViewComponent implements OnInit {
 
   selectedCategoryProducts: product[] = []; // Seçilen kategoriden ilk 4 ürün
 
+  randomProducts: product[] = []; // Rastgele seçilen ürünler
+
   constructor(private api: ApiService) {}
 
   ngOnInit(): void {
     this.loadProducts();
     this.filterTopProductsByCategory(); // İlk 4 ürün
+    this.loadRandomProducts(); // Rastgele dört ürünü seçer
   }
+
+// Rastgele dört ürün seçme fonksiyonu
+loadRandomProducts(): void {
+  if (this.data.length > 0) {
+    const shuffled = [...this.data].sort(() => 0.5 - Math.random()); // Ürünleri karıştırır
+    this.randomProducts = shuffled.slice(0, 4); // İlk dört ürünü seçer
+  }
+}
 
   // Rastgele ürün seçmek için yardımcı fonksiyon
 getRandomProducts(products: product[], count: number): product[] {
   const shuffled = products.sort(() => 0.5 - Math.random());
   return shuffled.slice(0, count); // İlk `count` kadar ürün al
 }
+
+
 
 // Kategoriye göre 4 ürün filtreleme
 filterTopProductsByCategory(): void {
@@ -226,6 +135,7 @@ filterTopProductsByCategory(): void {
     this.currentPage = 0; // İlk sayfaya dön
     this.updatePagedProducts();
     this.filterTopProductsByCategory(); // Yeni fonksiyon çağrılıyor
+   
   }
 
   // Fiyata göre sıralama
@@ -257,4 +167,5 @@ filterTopProductsByCategory(): void {
       console.log(`${item.title} sepetten kaldırıldı.`);
     
   }
+
 }
