@@ -14,14 +14,6 @@
   width: 100%; /* Konteynerin genişliğini belirt */
 }
 
-/* Hover efekti */
-/* .card:hover 
-  transform: scale(1.1); /* Büyütme efekti *
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); * Hafif gölge eklenir *
-  z-index: 2; * Resim öne çıkar *
-  transition: background-color 0.3s ease, transform 0.2s ease; * Hover ve aktif efektleri için *
-} */
-
 body{
     margin: 0;
     font-weight: 400;
@@ -94,30 +86,4 @@ button {
   }
   
 
-  .demo-toggles {
-    display: flex;
-    flex-direction: column;
-  }
   
-  .demo-toggles * {
-    margin-bottom: 16px;
-  }
-  
-  .demo-options {
-    display: flex;
-    flex-direction: column;
-    width: 600px;
-  }
-  
-  .demo-data * {
-    margin: 16px 0;
-  }
-  
-  .demo-paginator {
-    width: 600px;
-  }
-
-.btn-group button{
-  height: 40px;
-}
-

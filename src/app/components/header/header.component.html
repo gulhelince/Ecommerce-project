@@ -1,14 +1,3 @@
-<!-- <div class="container-fluid " style="background-color: black;">
-    <div class="row justify-content-center text-center mt-5">
-        <div class="col-md-8 col-lg-6">
-            <div class="header">
-                <h3 style="color: white;font-size: 23px;">Popular E-commerce Products</h3>
-            </div>
-            <i routerLink="cart-page" class="fas fa-shopping-cart" style="color: white;font-size: 18px;margin-left: 800px;cursor: pointer;">&nbsp;{{cartitems}}</i>
-        </div>
-    </div>
-</div> -->
-
 <nav class="container-fluid bg-white py-4 shadow-sm">
     <div class="d-flex align-items-center justify-content-between">
       <!-- Sol Kısım -->
@@ -21,12 +10,9 @@
         <a routerLink="/" routerLinkActive="active-link"  class="link mx-3 ">Home</a>
         <a routerLink="/shop"  routerLinkActive="active-link"  class="link mx-3">Shop</a>
         <a routerLink="/product-view"  routerLinkActive="active-link"  class="link mx-3">Product</a>
-        <a routerLink="cart-page"   class="link">
-            <!-- <i class="bi bi-cart3"></i> Cart 
-            <span class="cartCount">&nbsp;{{cartitems}}</span> -->
+        <a routerLink="cart-page" class="link">
 
             <div class="cart-container" routerLinkActive="active-link">
-                
                 Cart <i class="bi bi-cart3"></i>
                 <span class="cartCount">{{ cartitems }}</span>
               </div>
@@ -36,17 +22,11 @@
   
       <!-- Sağdaki Sepet -->
       <div class="col-lg-4 col-12 d-flex justify-content-center">
-        <!-- <a routerLink="cart-page" class="link">
-          <i class="bi bi-cart3"></i> Cart 
-          <span class="cartCount">&nbsp;{{cartitems}}</span>
-        </a> -->
         <form class="d-flex mr-10" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-dark" type="submit">Search</button>
         </form>&nbsp;&nbsp;&nbsp;&nbsp;
         <i class="icon  bi bi-person-circle mt-1"></i> &nbsp;&nbsp;&nbsp;
-           
-      
       </div>
     </div>
   </nav>

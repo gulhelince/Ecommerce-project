@@ -10,32 +10,6 @@ import { product } from './productmodal';
 })
 export class HomeComponent implements OnInit {
 
-  
-
-  bannerImages = [
-    {
-      id:1,
-      img:'../../assets/images/img1.jpg',
-    },
-    {
-      id:2,
-      img:'../../assets/images/img2.jpg',
-    },
-    {
-      id:3,
-      img:'../../assets/images/img3.jpg',
-    }
-  ]
-
-  topCategories = [
-    { name: 'Mobile', image: '../../assets/images/img3.jpg' },
-    { name: 'Cosmetics', image: '../../assets/images/img3.jpg' },
-    { name: 'Electronics', image: '../../assets/images/img3.jpg' },
-    { name: 'Furniture', image: '../../assets/images/img3.jpg' },
-    { name: 'Watches', image: '../../assets/images/img3.jpg' },
-    { name: 'Decor', image: '../../assets/images/img3.jpg' }
-  ];
-
   data: product[] = []; // Tüm ürünler
   pagedProducts: product[] = []; // Sayfalama yapılan ürünler
   categories = ['All', 'beauty', 'fragrances', 'furniture', 'groceries']; // Kategoriler
@@ -58,6 +32,22 @@ export class HomeComponent implements OnInit {
     this.loadRandomProducts(); // Rastgele dört ürünü seçer
   }
 
+  bannerImages = [
+    {
+      id:1,
+      img:'../../assets/images/img1.jpg',
+    },
+    {
+      id:2,
+      img:'../../assets/images/img2.jpg',
+    },
+    {
+      id:3,
+      img:'../../assets/images/img3.jpg',
+    }
+  ]
+
+
 // Rastgele dört ürün seçme fonksiyonu
 loadRandomProducts(): void {
   if (this.data.length > 0) {
@@ -71,8 +61,6 @@ getRandomProducts(products: product[], count: number): product[] {
   const shuffled = products.sort(() => 0.5 - Math.random());
   return shuffled.slice(0, count); // İlk `count` kadar ürün al
 }
-
-
 
 // Kategoriye göre 4 ürün filtreleme
 filterTopProductsByCategory(): void {

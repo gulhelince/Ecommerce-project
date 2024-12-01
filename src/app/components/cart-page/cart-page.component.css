@@ -65,8 +65,6 @@
     font-size: 18px;
   }
 
- 
-
   body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -91,7 +89,6 @@
     font-weight: bold;
   }
 
-  
   .progress-steps {
     display: flex;
     justify-content: space-between;
@@ -282,9 +279,6 @@
 .progress-steps .step.completed::after {
   background-color: #28a745; /* Tamamlanan adım için yeşil alt çizgi */
 }
-
-
-
 
 .thank-you-container {
   background-color: #f9f9f9;

@@ -1,151 +1,11 @@
-<!--product display part-->
-<!-- <div class="container p-5">
-    <div class="row">
-        <div class="col-md-4 mt-3" *ngFor="let item of data?.products">
-            <div class="card mt-2">
-                <div class="card-body">
-                    <div class="card-img-actions">
-                        <img routerLink="/product-detail/{{item.id}}" src="{{item.thumbnail}}" class="card-img img-fluid">
-                    </div>
-                </div>
-
-               <div class="card-body bg-light text-center">
-                <div>
-                    <h6 class="font-weight-semibold">
-                        <a class="text-default">{{item.title}}</a>
-                    </h6>
-                </div>
-                
-                <h3 class="mb-2 font-weight-semibold">${{item.price}}</h3>
-                <button routerLink="/product-detail/{{item.id}}" class="btn btn-sm btn-dark mt-2"><i class="fa fa-solid fa-info mr-2">&nbsp;&nbsp;view details</i></button>
-                <button (click)="addtocart(item)" class="btn btn-sm btn-warning mt-2"><i class="fa fa-cart-plus mr-2">&nbsp;Add to cart </i></button>&nbsp;
-                !-- <button (click)="removeitem(item)" class="btn btn-sm btn-danger mt-2"><i class="fa fa-remove mr-2">&nbsp;Remove Item</i></button>&nbsp; --
-               </div> 
-
-              
-            </div>
-            
-        </div>
-       
-    </div>
-
-   
-</div> -->
-
-
-<!-- <div class="container p-5">
-    <div class="row">
-        <div class="col-md-4 mt-3" *ngFor="let item of pagedProducts">
-            <div class="card mt-2">
-                <div class="card-body">
-                    <div class="card-img-actions">
-                        <img routerLink="/product-detail/{{item.id}}" src="{{item.thumbnail}}" class="card-img img-fluid">
-                    </div>
-                </div>
-                <div class="card-body bg-light text-center">
-                    <div>
-                        <h6 class="font-weight-semibold">
-                            <a class="text-default">{{item.title}}</a>
-                        </h6>
-                    </div>
-                    <h3 class="mb-2 font-weight-semibold">${{item.price}}</h3>
-                    <button routerLink="/product-detail/{{item.id}}" class="btn btn-sm btn-dark mt-2">
-                        <i class="fa fa-solid fa-info mr-2">&nbsp;&nbsp;view details</i>
-                    </button>
-                    <button (click)="addtocart(item)" class="btn btn-sm btn-warning mt-2">
-                        <i class="fa fa-cart-plus mr-2">&nbsp;Add to cart</i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <mat-paginator
-        [length]="data?.products?.length || 0"
-        [pageSize]="pageSize"
-        [pageSizeOptions]="[12, 24, 30]"
-        (page)="onPageChange($event)">
-    </mat-paginator>
-</div> -->
-<!-- 
-<div class="container p-5">
-    !-- Kategori ve sıralama menüleri --
-    <div class="row mb-4">
-      !-- Kategorilere Göre Filtreleme --
-      <div class="col-md-3">
-        <label for="categoryFilter" class="font-weight-bold">Categories</label>
-        <select 
-          id="categoryFilter"
-          [(ngModel)]="selectedCategory"
-          (change)="filterByCategory(selectedCategory)"
-          class="form-select"  aria-label="Default select example"
-        >
-          <option *ngFor="let category of categories" [value]="category">
-            {{ category }}
-          </option>
-        </select>
-      </div>
-  
-      !-- Fiyata Göre Sıralama --
-      <div class="col-md-3">
-        <label for="sortFilter" class="font-weight-bold">Sort by Price</label>
-        <select
-          id="sortFilter"
-          [(ngModel)]="selectedSortOption"
-          (change)="sortByPrice(selectedSortOption)"
-          class="form-select" aria-label="Default select example"
-        >
-          <option value="none">None</option>
-          <option value="asc">Low to High</option>
-          <option value="desc">High to Low</option>
-        </select>
-      </div>
-    </div>
-      
-  
-  
-  
-  <div class="container my-5">
-    <h4 class="font-weight-bold">Top Picks in <span class="text-primary">{{ selectedCategory }}</span></h4>
-    <div class="row">
-      <div class="col-md-3" *ngFor="let product of selectedCategoryProducts">
-        <div class="card">
-          <img
-            [src]="product.thumbnail"
-            [alt]="product.title"
-            class="card-img-top img-fluid"
-          />
-          <div class="card-body text-center">
-            <h6 class="font-weight-bold">{{ product.title }}</h6>
-            <p class="text-muted">${{ product.price }}</p>
-            <button
-              (click)="addtocart(product)"
-              class="btn btn-sm btn-warning"
-            >
-              Add to Cart
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
- <br><br>
-
-  
-
-
-
-  <div class="container my-4">
+  <div class="container my-4 mt-5">
     <h4 class="font-weight-bold mb-3">Top  <span class="text-primary">Categories</span></h4>
     <div class="d-flex justify-content-start">
       <button
         *ngFor="let category of categories"
         class="btn btn-outline-dark mx-2 justify-content-center"
         [class.active]="category === selectedCategory"
-        (click)="filterByCategory(category)"
-      >
-      
+        (click)="filterByCategory(category)">
         {{ category }}
       </button>
     </div>
@@ -159,8 +19,7 @@
         </h4>
         <a
           routerLink="/product-view"
-          class="btn btn-link text-primary font-weight-bold"
-        >
+          class="btn btn-link text-primary font-weight-bold">
           View All >
         </a>
       </div>
@@ -171,15 +30,13 @@
           <img
             [src]="product.thumbnail"
             [alt]="product.title"
-            class="card-img-top img-fluid"
-          />
+            class="card-img-top img-fluid" />
           <div class="card-body text-center">
             <h6 class="font-weight-bold">{{ product.title }}</h6>
             <p class="text-muted">${{ product.price }}</p>
             <button
               (click)="addtocart(product)"
-              class="btn btn-sm btn-warning justify-content-center"
-            >
+              class="btn btn-sm btn-warning justify-content-center">
               Add to Cart
             </button>
           </div>

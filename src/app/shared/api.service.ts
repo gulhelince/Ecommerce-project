@@ -8,7 +8,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ApiService {
 
-  // Bu değişken, sepetin içindeki ürünleri tutar. Başlangıçta boş bir dizi.
+// Bu değişken, sepetin içindeki ürünleri tutar. Başlangıçta boş bir dizi.
 public cartitemlist : any=[];
 
 // Bu değişken, ürünleri "BehaviorSubject" olarak tutar ve bu sayede ürünler her güncellenmede abonelere (subscriber) anında bildirilir.
@@ -64,11 +64,6 @@ removeallitems(){
     this.cartitemlist = [];  // Sepeti temizle
     this.productlist.next(this.cartitemlist)  // Sepeti güncelle
 }
-
-// product details 
-
-
-
 }
 
 /*
